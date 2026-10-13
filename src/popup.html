@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CalClip</title><link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header><div class="brand-mark">CC</div><div><h1>CalClip</h1><p>Clip it. Calendar it.</p></div></header>
+    <section class="capture"><button id="readSelection" class="capture-btn primary"><span>⌁</span><strong>Read selection</strong><small>Use text you highlighted</small></button><button id="readPage" class="capture-btn"><span>▤</span><strong>Read entire page</strong><small>Scan the visible page</small></button></section>
+    <div id="status" class="status" role="status" aria-live="polite">Choose a capture method to begin.</div>
+    <form id="eventForm" novalidate>
+      <div class="field"><label for="title">Event title</label><input id="title" name="title" placeholder="e.g. Team meetup"></div>
+      <div class="grid"><div class="field"><label for="date">Date</label><input id="date" name="date" type="date"></div><div class="field"><label for="startTime">Start time</label><input id="startTime" name="startTime" type="time"></div><div class="field"><label for="endTime">End time <em>optional</em></label><input id="endTime" name="endTime" type="time"></div></div>
+      <div class="field"><label for="location">Location <em>optional</em></label><input id="location" name="location" placeholder="Address or meeting link"></div>
+      <div class="field"><label for="description">Description <em>optional</em></label><textarea id="description" name="description" rows="4" placeholder="Notes for your calendar event"></textarea></div>
+      <div id="validation" class="validation" hidden></div>
+      <button id="createEvent" class="create" type="submit">Open in Google Calendar <span>↗</span></button>
+    </form>
+    <footer>Everything stays in your browser. CalClip does not use AI, accounts, or a backend.</footer>
+  </main><script src="parser.js"></script><script type="module" src="popup.js"></script>
+</body></html>
